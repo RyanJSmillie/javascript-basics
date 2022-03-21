@@ -1,9 +1,16 @@
 function sayHello (string) {
   // your code here
+  let world = "Hello, world!";
+  let MCRCodes = "Hello, MCR Codes!"
+
+  return world;
+
+  
 };
 
 function uppercase (string) {
   // your code here
+ 
 };
 
 function lowercase (string) {
