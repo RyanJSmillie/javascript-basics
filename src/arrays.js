@@ -44,25 +44,60 @@ const uppercaseWordsInArray = strings => {
 
 const reverseWordsInArray = strings => {
   // your code here
-  const splitString = strings.split(',');
-  const reverseArray = splitString.reverse();
-  const joinArray = reverseArray.join('');
-  return joinArray;
+  const reverse = strings
+    .toString()
+    .split('')
+    .reverse()
+    .join('');
+  return reverse;
+
+  // const string = strings.toString();
+  // const splitLetter = string.split("");
+  // const reverseArray = splitLetter.reverse();
+  // const joinArray = reverseArray.join('');
+  // const reverseArray2 = joinArray.reverse();
 };
 
 const onlyEven = numbers => {
   // your code here
-  return numbers.some(numbers % 2 === 0);
+  for (let i = 0; i < numbers.length; i++){
+    for (let j = 0; j < numbers.length; j++)
+    if (numbers[j] % 2 === 1){
+      numbers.splice(j,1)
+      break;
+    }
+  }
+  return numbers
 };
 
 const removeNthElement2 = (index, array) => {
   // your code here
-  return array.splice(index, 1);
+  const result = array.slice();
+  result.splice(index, 1);
+  return result;
 };
 
 const elementsStartingWithAVowel = strings => {
   // your code here
-  return strings.some()
+  let results = []
+
+  for (let i = 0; i < strings.length; i++) {
+    if (
+      strings[i].startsWith('a') ||
+      strings[i].startsWith('A') ||
+      strings[i].startsWith('e') ||
+      strings[i].startsWith('E') ||
+      strings[i].startsWith('i') ||
+      strings[i].startsWith('I') ||
+      strings[i].startsWith('o') ||
+      strings[i].startsWith('O') ||
+      strings[i].startsWith('u') ||
+      strings[i].startsWith('U')
+    ) {
+      results.push(strings[i]);
+    }
+  }
+  return results;
 };
 
 const removeSpaces = string => {
@@ -74,7 +109,7 @@ const sumNumbers = numbers => {
   // your code here
   let sum = 0;
 
-  for (let i = 0; i < numbers.length; i + 1) {
+  for (let i = 0; i < numbers.length; i++) {
     sum += numbers[i];
   }
   return sum;
@@ -82,6 +117,9 @@ const sumNumbers = numbers => {
 
 const sortByLastLetter = strings => {
   // your code here
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {
