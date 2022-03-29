@@ -27,24 +27,45 @@ const isOver65 = person => {
 
 const getAges = people => {
   // your code here
-  return people;
+  const results = [];
+  for (let i = 0; i < people.length; i++) {
+    results.push(people[i].age);
+  }
+  return results;
 };
 
 const findByName = (name, people) => {
   // your code here
-  return people.name;
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].name === name) {
+      return people[i];
+    }
+  }
 };
 
 const findHondas = cars => {
   // your code here
+  const result = [];
+  for (let i = 0; i < cars.length; i++) {
+    if (cars[i].manufacturer === 'Honda') {
+      result.push(cars[i]);
+    }
+  }
+  return result;
 };
 
 const averageAge = people => {
   // your code here
+  let avAge = 0;
+  for (let i = 0; i < people.length; i++) {
+    avAge += people[i].age;
+  }
+  return avAge / people.length;
 };
 
 const createTalkingPerson = (name, age) => {
   // your code here
+  return `Hi , my name is ${name} and I am ${age}!`;
 };
 
 module.exports = {

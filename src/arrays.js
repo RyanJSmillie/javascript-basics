@@ -79,7 +79,7 @@ const removeNthElement2 = (index, array) => {
 
 const elementsStartingWithAVowel = strings => {
   // your code here
-  let results = []
+  const results = []
 
   for (let i = 0; i < strings.length; i++) {
     if (
